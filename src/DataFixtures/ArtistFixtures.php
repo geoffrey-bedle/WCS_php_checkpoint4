@@ -22,7 +22,7 @@ class ArtistFixtures extends Fixture
 
             $artist->setLastname($faker->lastName);
             $artist->setFirstname($faker->firstName);
-
+$artist->setPicture($faker->imageUrl(250,250,'people'));
             $artist->setSpeciality(self::SPECIALITIES[array_rand(self::SPECIALITIES)]);
             $artist->setNickname($artist->getSpeciality().' Circus');
             $manager->persist($artist);
