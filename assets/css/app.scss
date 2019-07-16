@@ -1,6 +1,8 @@
 @import "~bootstrap";
 @import "vars";
-@import "footer";
+@import "_footer";
+@import "home";
+@import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap');
 a{
   color:$primary-color;
 }
