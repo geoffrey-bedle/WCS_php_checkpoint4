@@ -1,1 +1,6 @@
 @import "~bootstrap";
+@import "vars";
+@import "footer";
+a{
+  color:$primary-color;
+}
