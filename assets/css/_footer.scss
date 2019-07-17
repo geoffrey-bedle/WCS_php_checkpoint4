@@ -3,6 +3,11 @@ footer{
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #f8f9fa;
+  a:hover{
+    color:#262a39;
+    text-decoration: none;
+  }
 
   img{
    width:  130px;

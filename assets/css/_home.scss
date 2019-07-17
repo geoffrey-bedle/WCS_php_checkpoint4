@@ -33,6 +33,7 @@
 
 
 
+
   img {
     width: 350px;
     height: 350px;
@@ -46,14 +47,32 @@
 
 .bloc:nth-child(even) {
   background-color: #262a39;
+  flex-direction: row-reverse;
+  color: white;
+  img {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 @media screen and (max-width: 400px) {
-  .bloc-1 {
+  .bloc:nth-child(even){
+    padding-top: 50px;
+  }
+  .bloc:nth-child(odd){
+    margin-top: 50px;
+  }
+  .bloc{
     flex-wrap: wrap;
 
+.home-text{
+  max-width: 90%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
     p {
       width: 100%;
+
     }
   }
 }
