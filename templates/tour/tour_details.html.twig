@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="top-details">
+
+        <div>
+            <h1>{{ tour.name }}</h1>
+            <p>{{ tour.place }} : {{ tour.date.date }} </p>
+            <img src="https://via.placeholder.com/350" alt="{{ tour.name }} photo">
+        </div>
+
+        <div class="details-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at cum itaque laudantium
+            non officiis, omnis quaerat sequi velit. Aspernatur beatae debitis, delectus
+            dolores doloribus eligendi eos eveniet fuga fugiat hic ipsum iusto labore laboriosam
+            laudantium molestias mollitia optio praesentium rerum sint ullam ut voluptatem
+            voluptatum. Assumenda atque cupiditate deserunt nisi provident quibusdam. Ad aspernatur
+            assumenda consequuntur culpa cupiditate delectus distinctio doloribus ea eaque eligendi
+            enim error esse explicabo fugiat hic illo impedit in incidunt inventore ipsam iure magni
+            molestiae nesciunt nihil nobis nulla odio odit porro praesentium qui quia ratione repellendus
+            saepe sunt tenetur, veritatis voluptatum. Aliquam aliquid beatae facere facilis fugit molestias
+            rem, tempora voluptate voluptates. Ab aperiam, atque blanditiis cupiditate deserunt dolorem earum
+            ex excepturi harum, illum perferendis quam qui quo reprehenderit sit, sunt totam! Ex quisquam, vero.
+            Animi facilis id ipsum molestias neque quasi quibusdam quis. Asperiores consequuntur ducimus voluptas!
+            Accusamus alias aliquam dicta, dolorum est facere in iure laboriosam maiores nam nihil nisi nostrum
+        </div>
+    </div>
+
+    <div class="show-block">
+        <h2>Les numéros</h2>
+        <div class="card-show-block">
+            {% for show in shows %}
+
+                <div class="card show-card" style="width: 18rem;">
+                    <img src="{{ show.picture }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3>{{ show.name }}</h3>
+                        <p>{{ show.type }}</p>
+                        <p>{{ show.description }}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="artist-block">
+        <h2>Les artistes</h2>
+        <div class="card-artist-block">
+            {% for show in shows %}
+                {% for artist in show.artist %}
+
+                    <div class="card artist-card" style="width: 18rem;">
+                        <img src="{{ artist.picture }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>{{ artist.firstname }} {{ artist.lastname }}</h3>
+                            <p>{{ artist.nickname }}</p>
+                            <p>{{ artist.speciality }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

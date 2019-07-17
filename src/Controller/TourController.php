@@ -1,0 +1,45 @@
+<?php
+
+
+namespace App\Controller;
+
+use App\Entity\Show;
+use App\Entity\Tour;
+use App\Repository\TourRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+
+/**
+ * @Route ("/tour")
+ */
+class TourController extends AbstractController
+{
+    /**
+     * @Route ("/list", name = "tour_list")
+     */
+    public function index(TourRepository $tourRepository)
+    {
+        $tours = $tourRepository->findAll();
+
+        return $this->render('/tour/tour_list.html.twig',
+            [
+                'tours' => $tours
+            ]);
+    }
+
+    /**
+     * @Route ("/{name}/{place}/{id}/details", name = "tour_details")
+     */
+    public function show(Tour $tour)
+    {
+        $shows = $tour->getShows();
+
+        return $this->render('/tour/tour_details.html.twig',
+            [
+                'tour' => $tour,
+                'shows' => $shows,
+            ]);
+    }
+}
