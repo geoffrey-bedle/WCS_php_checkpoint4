@@ -44,9 +44,15 @@ class Show
      */
     private $picture;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tour", mappedBy="shows")
+     */
+    private $tours;
+
     public function __construct()
     {
         $this->artist = new ArrayCollection();
+        $this->tours = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -124,6 +130,34 @@ class Show
     public function setPicture(string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tour[]
+     */
+    public function getTours(): Collection
+    {
+        return $this->tours;
+    }
+
+    public function addTour(Tour $tour): self
+    {
+        if (!$this->tours->contains($tour)) {
+            $this->tours[] = $tour;
+            $tour->addShow($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTour(Tour $tour): self
+    {
+        if ($this->tours->contains($tour)) {
+            $this->tours->removeElement($tour);
+            $tour->removeShow($this);
+        }
 
         return $this;
     }
