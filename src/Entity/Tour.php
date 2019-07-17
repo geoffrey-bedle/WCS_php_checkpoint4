@@ -43,6 +43,11 @@ class Tour
      */
     private $shows;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $picture;
+
     public function __construct()
     {
         $this->shows = new ArrayCollection();
@@ -123,6 +128,18 @@ class Tour
         if ($this->shows->contains($show)) {
             $this->shows->removeElement($show);
         }
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }

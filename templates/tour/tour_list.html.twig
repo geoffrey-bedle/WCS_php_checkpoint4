@@ -6,10 +6,11 @@
             <a href="{{ path('tour_details',{ 'name': tour.name,'place': tour.place,'id': tour.id }) }}">
 
                 <div class="card" style="width: 18rem;">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="{{ tour.name }} picture">
+                    <img src="{{ tour.picture }}" class="card-img-top" alt="{{ tour.name }} picture">
                     <div class="card-body">
                         <h3>{{ tour.name }}</h3>
                         <p>{{ tour.place }}</p>
+                        <p>{{ tour.price }} €/pers</p>
 
                     </div>
                 </div>
