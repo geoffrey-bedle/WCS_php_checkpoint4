@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+<h1>Nous contacter</h1>
+    {{ form_start(form) }}
+    {{ form_row(form.Prenom) }}
+    {{ form_row(form.Nom) }}
+    {{ form_row(form.Mail) }}
+    {{ form_row(form.Message) }}
+    <button>Envoyer</button>
+    {{ form_end(form) }}
+
+{% endblock %}
