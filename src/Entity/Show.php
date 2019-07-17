@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ShowRepository")
+ * @ORM\Table("`show`")
  */
 class Show
 {
@@ -38,9 +39,20 @@ class Show
      */
     private $artist;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $picture;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tour", mappedBy="shows")
+     */
+    private $tours;
+
     public function __construct()
     {
         $this->artist = new ArrayCollection();
+        $this->tours = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -105,6 +117,46 @@ class Show
     {
         if ($this->artist->contains($artist)) {
             $this->artist->removeElement($artist);
+        }
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tour[]
+     */
+    public function getTours(): Collection
+    {
+        return $this->tours;
+    }
+
+    public function addTour(Tour $tour): self
+    {
+        if (!$this->tours->contains($tour)) {
+            $this->tours[] = $tour;
+            $tour->addShow($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTour(Tour $tour): self
+    {
+        if ($this->tours->contains($tour)) {
+            $this->tours->removeElement($tour);
+            $tour->removeShow($this);
         }
 
         return $this;
