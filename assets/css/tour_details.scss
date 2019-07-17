@@ -1,0 +1,56 @@
+.top-details{
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  h1{
+    margin-bottom: 15px;
+  }
+  h1+p{
+    margin-bottom: 50px;
+  }
+
+  .details-text{
+    max-width: 50%;
+  }
+}
+.show-block{
+  background-color:#262a39;
+  padding-top: 50px;
+
+  .card-show-block{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  h2{
+    color:white;
+    text-align: center;
+  }
+.show-card{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+}
+
+.artist-block{
+  background-color: white;
+  padding-top: 50px;
+  .card-artist-block{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  h2{
+    color:#262a39;
+    text-align: center;
+  }
+  .artist-card{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .card-body{
+    background-color:#262a39;
+    color:white;
+  }
+}
