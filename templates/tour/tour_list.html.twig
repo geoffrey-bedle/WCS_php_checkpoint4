@@ -11,6 +11,7 @@
                         <h3>{{ tour.name }}</h3>
                         <p>{{ tour.place }}</p>
                         <p>{{ tour.price }} €/pers</p>
+                        <p>Places restantes : {{ tour.tickets }}</p>
 
                     </div>
                 </div>
@@ -18,4 +19,6 @@
 
         {% endfor %}
     </div>
+
 {% endblock %}
+

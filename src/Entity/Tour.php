@@ -48,6 +48,11 @@ class Tour
      */
     private $picture;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $tickets;
+
     public function __construct()
     {
         $this->shows = new ArrayCollection();
@@ -140,6 +145,18 @@ class Tour
     public function setPicture(string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getTickets(): ?int
+    {
+        return $this->tickets;
+    }
+
+    public function setTickets(?int $tickets): self
+    {
+        $this->tickets = $tickets;
 
         return $this;
     }

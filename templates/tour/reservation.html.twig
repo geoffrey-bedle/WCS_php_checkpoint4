@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="reservation">
+
+    <div>
+        <h1>{{ tour.name }}</h1>
+        <p>{{ tour.place }} : {{ tour.date.date }} </p>
+        <img src="{{ tour.picture }}" alt="{{ tour.name }} photo">
+    </div>
+
+    <div class="reservation-form">
+        {{ form_start(form) }}
+        {{ form_row(form.mail, { 'label': 'Votre mail' }) }}
+        {{ form_row(form.tickets, {'label': 'Nombre de places'}) }}
+        <button>Payer</button>
+        {{ form_end(form) }}
+
+    </div>
+    </div>
+
+{% endblock %}
