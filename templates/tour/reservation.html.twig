@@ -10,7 +10,8 @@
 
     <div>
         <h1>{{ tour.name }}</h1>
-        <p>{{ tour.place }} : {{ tour.date.date }} </p>
+        <p>{{ tour.place }} : {{ tour.date.date|date('d/m/Y') }} </p>
+        <p>{{ tour.date.date|date('H') }}H{{ tour.date.date|date('i') }}</p>
         <img src="{{ tour.picture }}" alt="{{ tour.name }} photo">
     </div>
 

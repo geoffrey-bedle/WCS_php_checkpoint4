@@ -1,7 +1,7 @@
 <div style="display: flex">
 <div>
 
-    <img style="width: 150px" src="https://i.ibb.co/hmGGWfb/wildcircuslogo.png">
+    <img style="width: 150px" src="https://i.ibb.co/hmGGWfb/wildcircuslogo.png" alt="image logo">
 </div>
     <div style="margin-left: 40px">
 
@@ -10,6 +10,9 @@
     <p>
         Vous avez reservé {{ data.tickets }} places pour le spectacle
         <span style="font-weight: bold">{{ tour.name }} à {{ tour.place }}</span>.
+        <br>
+        <br>
+        Rendez-vous le  {{ tour.date.date|date("d/m/Y ") }} à {{ tour.date.date|date("H") }}H{{ tour.date.date|date("i") }} pour une nuit de frisson.
         <br>
         <br>
         Vous recevrez vos billets dans votre boite mail dans quelques minutes.

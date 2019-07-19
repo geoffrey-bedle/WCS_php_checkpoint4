@@ -1,0 +1,30 @@
+.contact-section{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-left:10%;
+
+  .contact-img{
+    margin-right: 5%;
+    img{
+      width: 550px;
+    }
+  }
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+
+
+   div input,textarea{
+      width: 350px;
+    }
+    button{
+      margin-top: 15px;
+      background-color: #262a39;
+      color:white;
+    }
+  }
+}
