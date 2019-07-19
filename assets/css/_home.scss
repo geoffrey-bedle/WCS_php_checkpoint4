@@ -41,7 +41,7 @@
 
   p {
     color: #262a39;
-
+    font-family: 'Montserrat', sans-serif;
   }
 }
 
@@ -49,6 +49,9 @@
   background-color: #262a39;
   flex-direction: row-reverse;
   color: white;
+  p{
+    font-family: 'Montserrat', sans-serif;
+  }
   img {
     width: 350px;
     height: 350px;
