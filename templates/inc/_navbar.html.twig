@@ -11,8 +11,8 @@
             <li class="nav-item {% if app.request.server.get('PATH_INFO') == path('galery_categories') %}active{% endif %}">
                 <a class="nav-link" href="{{ path('galery_categories') }}">Galerie</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Informations</a>
+            <li class="nav-item {% if app.request.server.get('PATH_INFO') == path('infos') %}active{% endif %}">
+                <a class="nav-link" href="{{ path('infos') }}">Informations</a>
             </li>
             <li class="nav-item {% if app.request.server.get('PATH_INFO') == path('contact') %}active{% endif %}">
                 <a class="nav-link" href="{{ path('contact') }}">Contact</a>

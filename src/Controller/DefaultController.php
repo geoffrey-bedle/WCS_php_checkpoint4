@@ -43,4 +43,12 @@ class DefaultController extends AbstractController
                 'form' => $form->createView()
             ]);
     }
+
+    /**
+     * @Route ("/information", name = "infos")
+     */
+    public function information()
+    {
+        return $this->render('information.html.twig');
+    }
 }

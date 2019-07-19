@@ -1,16 +1,18 @@
-.contact-section{
+.contact-section {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
   align-items: center;
-  margin-left:10%;
+  margin-left: 10%;
 
-  .contact-img{
+  .contact-img {
     margin-right: 5%;
-    img{
+
+    img {
       width: 550px;
     }
   }
+
   .contact-form form {
     display: flex;
     flex-direction: column;
@@ -18,13 +20,52 @@
     width: 50%;
 
 
-   div input,textarea{
+    div input, textarea {
       width: 350px;
     }
-    button{
+
+    button {
       margin-top: 15px;
       background-color: #262a39;
-      color:white;
+      color: white;
     }
   }
 }
+
+@media screen and ( max-width: 1024px) {
+  .contact-section {
+    flex-direction: column;
+
+    .contact-img {
+
+      img {
+        width: 250px;
+      }
+    }
+  }
+  .contact-form {
+    h1 {
+      text-align: center;
+    }
+
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact-section {
+
+
+
+
+    .contact-form form {
+
+
+
+      div input, textarea {
+        width: 250px;
+      }
+
+
+    }
+  }}
