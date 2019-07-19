@@ -14,22 +14,27 @@
     margin-bottom: 15px;
   }
 
-  h1 + p {
-    margin-bottom: 50px;
-  }
+
 
   .details-text {
     max-width: 50%;
-    a{
-      background-color:#262a39;
+
+    p {
+      margin-bottom: 50px;
+    }
+
+    a {
+
+      background-color: #262a39;
       border-radius: 8px;
-      color:white;
+      color: white;
       padding: 10px;
       transition: .3s;
     }
-    a:hover{
+
+    a:hover {
       background-color: ghostwhite;
-      color:#262a39;
+      color: #262a39;
       box-shadow: 1px 3px darkgrey;
       border: solid 1px darkgray;
       text-decoration: none;

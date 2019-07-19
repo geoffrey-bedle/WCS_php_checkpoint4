@@ -2,9 +2,11 @@
 @import "vars";
 @import "footer";
 @import "home";
-@import "artist_index";
 @import "tour_list";
 @import "tour_details";
+@import "reservation";
+@import "galerie";
+@import "contact";
 @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap');
 a{
   color:$primary-color;

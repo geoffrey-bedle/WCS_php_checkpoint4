@@ -6,13 +6,27 @@
             {{ message }}
         </div>
     {% endfor %}
-<h1>Nous contacter</h1>
-    {{ form_start(form) }}
-    {{ form_row(form.Prenom) }}
-    {{ form_row(form.Nom) }}
-    {{ form_row(form.Mail) }}
-    {{ form_row(form.Message) }}
-    <button>Envoyer</button>
-    {{ form_end(form) }}
+    <div class="contact-section">
+
+        <div class="contact-img">
+            <img src="assets/img/horror-contact.jpg" alt="image femme cirque">
+        </div>
+
+
+        <div class="contact-form">
+            <h1>Nous contacter</h1>
+            {{ form_start(form) }}
+            {{ form_row(form.Prenom) }}
+            {{ form_row(form.Nom) }}
+            {{ form_row(form.Mail) }}
+            {{ form_row(form.Message) }}
+            <button>Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+
+
+
 
 {% endblock %}

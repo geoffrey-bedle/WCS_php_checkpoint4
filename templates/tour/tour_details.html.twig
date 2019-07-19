@@ -5,7 +5,9 @@
 
         <div>
             <h1>{{ tour.name }}</h1>
-            <p>{{ tour.place }} : {{ tour.date.date }} </p>
+            <p>Lieux : {{ tour.place }}</p>
+            <p>Date :   {{ tour.date.date|date("d/ m/ Y") }} </p>
+            <p>Début :   {{ tour.date.date|date("H") }} H {{ tour.date.date|date("i") }} </p>
             <img src="{{ tour.picture }}" alt="{{ tour.name }} photo">
         </div>
 
@@ -24,7 +26,7 @@
             ex excepturi harum, illum perferendis quam qui quo reprehenderit sit, sunt totam! Ex quisquam, vero.
             Animi facilis id ipsum molestias neque quasi quibusdam quis. Asperiores consequuntur ducimus voluptas!
                 Accusamus alias aliquam dicta, dolorum est facere in iure laboriosam maiores nam nihil nisi nostrum</p>
-            <a href="#">Reservez votre place</a>
+            <a href="{{ path('tour_reservation',{'name': tour.name, 'place' : tour.place}) }}">Reservez votre place</a>
         </div>
     </div>
 

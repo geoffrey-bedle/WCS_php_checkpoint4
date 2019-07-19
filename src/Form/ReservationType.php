@@ -3,22 +3,17 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ContactType extends AbstractType
+class ReservationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Prenom')
-            ->add('Nom')
-            ->add('Mail')
-            ->add('Message', TextareaType::class)
-
-        ;
+            ->add('mail', EmailType::class)
+            ->add('tickets');
     }
 
     public function configureOptions(OptionsResolver $resolver)
